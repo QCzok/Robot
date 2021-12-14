@@ -101,6 +101,7 @@ function update() {
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     // Rechteck neu zeichnen
     canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+    
 }
 
 /*
@@ -109,5 +110,7 @@ CANVAS IMPORTIEREN
 let canvas = document.getElementById("myCanvas");
 let canvasContext = canvas.getContext("2d");
 
+
 // RECHTECK ZEICHNEN
 canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+let img = document.getElementById("scream");
