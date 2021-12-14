@@ -22,22 +22,13 @@ function step() {
     FALLS OSTEN, DANN X UM EINS ERHÖHEN
     */
     if (eddy.heading == 'EAST') {
-        if (eddy.posX == 9) {
-            alert("Du bist an eine Grenze gestoßen!")
-        }
-        else {
-            eddy.posX = eddy.posX + 1;
-        }
+        eddy.posX = eddy.posX + 1;
     }
     /*
      FALLS SÜDEN, DANN Y UM EINS ERHÖREN
          */
     if (eddy.heading == "SOUTH") {
-        if(eddy.posY == 9) {
-            alert("Du bist an eine Grenze gestoßen!")
-        } else {
-            eddy.posY = eddy.posY + 1;
-        }
+        eddy.posY = eddy.posY + 1;
     }
 
     // FALLS WESTEN, DANN X UM EINS VERRINGERN
@@ -53,7 +44,7 @@ function step() {
     //FALLS NORDEN, DANN Y UM EINS VERRINGERN
     if (eddy.heading == "NORTH") {
         // DARF KEINE MINUSWERTE ERREICHEN
-        if (eddy.posY == 0) {
+        if(eddy.posY == 0) {
             alert("Du bist an eine Grenze gestoßen!")
         } else {
             eddy.posY = eddy.posY - 1;
@@ -97,10 +88,6 @@ function update() {
     document.getElementById("posX").innerHTML = eddy.posX;
     document.getElementById("posY").innerHTML = eddy.posY;
     document.getElementById("heading").innerHTML = eddy.heading;
-    // Canvas bereinigen
-    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-    // Rechteck neu zeichnen
-    canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
 }
 
 /*
