@@ -25,14 +25,22 @@ function step() {
     FALLS OSTEN, DANN X UM EINS ERHÖHEN
     */
     if (eddy.heading == 'EAST') {
+        if(eddy.posX == 15) {
+            alert("Grenze")
+        }
+    else {  
         eddy.posX = eddy.posX + 1;
-    }
+    }}  
     /*
      FALLS SÜDEN, DANN Y UM EINS ERHÖREN
          */
     if (eddy.heading == "SOUTH") {
+        if(eddy.posY == 11) {
+            alert("Grenze")
+        }
+        else {
         eddy.posY = eddy.posY + 1;
-    }
+    }}
 
     // FALLS WESTEN, DANN X UM EINS VERRINGERN
     if (eddy.heading == "WEST") {
