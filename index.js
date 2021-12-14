@@ -22,13 +22,21 @@ function step() {
     FALLS OSTEN, DANN X UM EINS ERHÖHEN
     */
     if (eddy.heading == 'EAST') {
+        if(eddy.posX == 9){
+            alert('Grenze')
+        } else {
         eddy.posX = eddy.posX + 1;
+        }
     }
     /*
      FALLS SÜDEN, DANN Y UM EINS ERHÖREN
          */
     if (eddy.heading == "SOUTH") {
+        if(eddy.posY == 9){
+            alert('Grenze')
+        }else{
         eddy.posY = eddy.posY + 1;
+        }
     }
 
     // FALLS WESTEN, DANN X UM EINS VERRINGERN
@@ -88,6 +96,9 @@ function update() {
     document.getElementById("posX").innerHTML = eddy.posX;
     document.getElementById("posY").innerHTML = eddy.posY;
     document.getElementById("heading").innerHTML = eddy.heading;
+    
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
 }
 
 /*
@@ -95,3 +106,7 @@ CANVAS ZEICHNEN IN HTML UND ÜBER CONTEXT IMPORTIEREN
 ROBOTER EINZEICHNEN
 IN DER CANVAS BEWEGUNGEN AUSFÜHREN
 */
+let canvas = document.getElementById("myCanvas");
+let canvasContext = canvas.getContext("2d");
+
+canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
