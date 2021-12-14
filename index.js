@@ -65,6 +65,7 @@ function rotate() {
     // FALLS OSTEN, DANN SÜDEN
     if (eddy.heading == "EAST") {
         eddy.heading = "SOUTH";
+        eddy.arrow = '<i class="fas fa-angle-double-down"></i>';
         update();
         return;
     };
@@ -73,6 +74,7 @@ function rotate() {
     // FALLS SÜDEN, DANN WESTEN
     if (eddy.heading == "SOUTH") {
         eddy.heading = "WEST";
+        eddy.arrow = '<i class="fas fa-angle-double-left"></i>';
         update();
         return;
     }
@@ -80,6 +82,7 @@ function rotate() {
     // FALLS WESTEN, DANN NORDEN
     if (eddy.heading == "WEST") {
         eddy.heading = "NORTH";
+        eddy.arrow = '<i class="fas fa-angle-double-up"></i>';
         update();
         return;
     }
@@ -87,6 +90,7 @@ function rotate() {
     // FALLS NORDEN, DANN OSTEN
     if (eddy.heading == "NORTH") {
         eddy.heading = "EAST";
+        eddy.arrow = '<i class="fas fa-angle-double-right"></i>';
         update();
         return;
     }
@@ -96,7 +100,8 @@ function update() {
     document.getElementById("posX").innerHTML = eddy.posX;
     document.getElementById("posY").innerHTML = eddy.posY;
     document.getElementById("heading").innerHTML = eddy.heading;
-    
+    document.getElementById("arrow").innerHTML = eddy.arrow;
+
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
 }
@@ -108,5 +113,9 @@ IN DER CANVAS BEWEGUNGEN AUSFÜHREN
 */
 let canvas = document.getElementById("myCanvas");
 let canvasContext = canvas.getContext("2d");
+// let img = document.getElementById("scream");
+// canvasContext.drawImage(img, eddy.posX * 50, eddy.posY * 50, 50, 50);
 
+canvasContext.fillStyle = 'blue';
 canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+
