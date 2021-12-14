@@ -41,7 +41,7 @@ function step() {
      TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
      */
     if (eddy.heading == "NORTH") {
-        eddy.posX = eddy.posX - 1;
+        eddy.posY = eddy.posY - 1;
     }
 }
 
