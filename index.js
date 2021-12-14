@@ -34,12 +34,12 @@ function step() {
     /* 
      TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN */
      if (eddy.heading == "West") {
-         eddy.posX= eddy.posX + 1;
+         eddy.posX= eddy.posX - 1;
      }
 
     // TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
     if(eddy.heading == "North") {
-        eddy.posY = eddy.posY + 1;
+        eddy.posY = eddy.posY - 1;
     }
 }
 
