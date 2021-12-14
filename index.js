@@ -36,11 +36,11 @@ function step() {
      TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
      */
      if(eddy.heading == "WESTEN"){
-        eddy.posx = eddy.posx + 1;
+        eddy.posX = eddy.posX + 1;
     }
 
     if(eddy.heading == "NORDEN"){
-        eddy.posy = eddy.posy + 1;
+        eddy.posY = eddy.posY + 1;
     }
 
     
@@ -61,10 +61,10 @@ function rotate() {
         TODO:FALLS NORDEN, DANN Osten
     */
 }if(eddy.heading == "WEST"){
-    eddy.heading = "NORDEN";
+    eddy.heading = "NORTH";
 }
-if(eddy.heading == "NORDEN"){
-    eddy.heading = "Osten";
+if(eddy.heading == "NORTH"){
+    eddy.heading = "EAST";
 }
 
 /*
