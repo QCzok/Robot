@@ -22,13 +22,21 @@ function step() {
     FALLS OSTEN, DANN X UM EINS ERHÖHEN
     */
     if (eddy.heading == "EAST") {
-        eddy.posX = eddy.posX + 1;
+        if (eddy.posX == 9) {
+            alert("Du bist an eine Grenze geßtosen");
+        } else {
+            eddy.posX = eddy.posX + 1;
+        }
     }
     /*
      FALLS SÜDEN, DANN Y UM EINS ERHÖREN
          */
     if(eddy.heading == "SOUTH"){
-        eddy.posY = eddy.posY + 1;
+        if (eddy.posY == 9) {
+            alert("Du bist an eine Grenze geßtosen");
+        } else {
+            eddy.posY = eddy.posY + 1;
+        }
     }
 
     /*
@@ -90,7 +98,9 @@ function update() {
     document.getElementById("posX").innerHTML = eddy.posX;
     document.getElementById("posY").innerHTML = eddy.posY;
     document.getElementById("heading").innerHTML = eddy.heading;
-
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    //canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+    canvasContext.drawImage(img, eddy.posX * 50, eddy.posY * 50, img.width = 50, img.height = 50);
 }
 
 /*
@@ -98,3 +108,10 @@ CANVAS ZEICHNEN IN HTML UND ÜBER CONTEXT IMPORTIEREN
 ROBOTER EINZEICHNEN
 IN DER CANVAS BEWEGUNGEN AUSFÜHREN
 */
+
+let canvas = document.getElementById('myCanvas');
+let canvasContext = canvas.getContext('2d');
+let img = document.getElementById('meinBild');
+//canvasContext.fillStyle = "red";
+//canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+canvasContext.drawImage(img,0,0,img.width = 50, img.height = 50 );
