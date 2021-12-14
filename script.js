@@ -8,7 +8,7 @@ let eddy = {
 function step() {
    
     if (eddy.heading == 'EAST') {
-        if (eddy.posX == 9) {
+        if (eddy.posX == canvas.width) {
             alert("Du bist an eine Grenze gestoßen!")
         }
         else {
@@ -16,7 +16,7 @@ function step() {
         }
     }
     if (eddy.heading == "SOUTH") {
-        if(eddy.posY == 9) {
+        if(eddy.posY == canvas.width) {
             alert("Du bist an eine Grenze gestoßen!")
         } else {
             eddy.posY = eddy.posY + 1;
@@ -25,7 +25,7 @@ function step() {
   
     if (eddy.heading == "WEST") {
        
-        if (eddy.posX == 0) {
+        if (eddy.posX == canvas.width) {
             alert("Du bist an eine Grenze gestoßen!")
         } else {
             eddy.posX = eddy.posX - 1;
@@ -35,7 +35,7 @@ function step() {
  
     if (eddy.heading == "NORTH") {
       
-        if(eddy.posY == 0) {
+        if(eddy.posY == canvas.width) {
             alert("Du bist an eine Grenze gestoßen!")
         } else {
             eddy.posY = eddy.posY - 1;
@@ -80,15 +80,12 @@ function update() {
     document.getElementById("posY").innerHTML = eddy.posY;
     document.getElementById("heading").innerHTML = eddy.heading;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+    ctx.drawImage(img, eddy.posX, eddy.posY, img.width / 4, img.height / 4);
 }
 
+
+var img = document.getElementById('meinBild');
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-ctx.fillStyle = 'blue';
-ctx.shadowOffsetX = 5;
-ctx.shadowOffsetY = 5;
-ctx.shadowBlur    = 5;
-ctx.shadowColor   = 'rgba(204, 204, 204, 0)';
 ctx.fillRect(5,5,50,50);
 
