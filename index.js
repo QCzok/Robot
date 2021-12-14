@@ -97,5 +97,4 @@ let canvas = document.getElementById("myCanvas");
 let canvasContext = canvas.getContext("2d");
 
 // RECHTECK ZEICHNEN
-canvasContext.fillStyle = 'red';
 canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
