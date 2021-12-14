@@ -31,14 +31,23 @@ function step() {
         eddy.posY = eddy.posY + 1;
     }
 
-    if(eddy.heading == "West"){
-        eddy.posX = eddy.posX - 1;
+    if(eddy.heading == "WEST"){
+        if (eddy.posX == 0) {
+            alert("Du bist an eine Grenze gestoßen!")
+        } else {
+            eddy.posX = eddy.posX - 1;
+        }
     }
 
     if(eddy.heading == "North"){
-        eddy.posY = eddy.posY - 1;
+        if(eddy.posY == 0) {
+            alert("Du bist an eine Grenze gestoßen!")
+        } else {
+            eddy.posY = eddy.posY - 1;
+        }
     }
-
+    document.getElementById("posX").innerHTML = eddy.posX
+    document.getElementById("posY").innerHTML = eddy.posY
 
     /* 
      TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
@@ -50,19 +59,27 @@ function rotate() {
     // FALLS OSTEN, DANN SÜDEN
     if(eddy.heading == "EAST"){
         eddy.heading = "SOUTH";
+        document.getElementById("heading").innerHTML = eddy.heading
+        return;
     }
 
     // FALLS SÜDEN, DANN WESTEN
     if(eddy.heading == "SOUTH"){
         eddy.heading = "WEST";
+        document.getElementById("heading").innerHTML = eddy.heading
+        return;
     }
 
     if(eddy.heading == "WEST"){
         eddy.heading = "North";
+        document.getElementById("heading").innerHTML = eddy.heading
+        return;
     }
 
     if(eddy.heading == "North"){
         eddy.heading = "EAST";
+        document.getElementById("heading").innerHTML = eddy.heading
+        return;
     }
 
     /*
