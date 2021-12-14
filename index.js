@@ -64,7 +64,7 @@ function rotate() {
 
     // FALLS NORDEN, DANN Osten
     if(eddy.heading == "NORD"){
-        eddy.heading = "OST";
+        eddy.heading = "EAST";
     }
 
     /*
