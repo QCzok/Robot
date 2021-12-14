@@ -1,0 +1,16 @@
+.canvas {border:solid 4rem; 
+    border: solid 3px; color: rgb(24, 23, 23); /* Rahmen */}
+
+    
+
+            canvas {
+              margin: auto;
+              position: absolute;
+          
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+          
+              border: 4px solid rgb(131, 221, 14);
+            }
