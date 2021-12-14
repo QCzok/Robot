@@ -103,6 +103,7 @@ function update() {
 
 canvasContext.clearRect(0, 0, canvas.width, canvas.height)
 canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
+canvasContext.fillStyle = "#0F0";
 }
 /*
 CANVAS ZEICHNEN IN HTML UND ÜBER CONTEXT IMPORTIEREN
