@@ -27,30 +27,40 @@ function step() {
     /*
      FALLS SÜDEN, DANN Y UM EINS ERHÖREN
          */
-    if(eddy.heading == "SOUTH"){
+    if (eddy.heading == "SOUTH") {
         eddy.posY = eddy.posY + 1;
     }
+    //TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
+    if (eddy.heading == "WEST") {
+        eddy.posY = eddy.posX - 1;
+    }
+    //TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
+    if (eddy.heading == "NORTH") {
+        eddy.posY = eddy.posY - 1;
+    }
 
-    /* 
-     TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
-     TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
-     */
+
 }
 
 function rotate() {
     // FALLS OSTEN, DANN SÜDEN
-    if(eddy.heading == "EAST"){
+    if (eddy.heading == "EAST") {
         eddy.heading = "SOUTH";
     }
 
     // FALLS SÜDEN, DANN WESTEN
-    if(eddy.heading == "SOUTH"){
+    if (eddy.heading == "SOUTH") {
         eddy.heading = "WEST";
     }
-    /*
-        TODO:FALLS WESTEN, DANN NORDEN
-        TODO:FALLS NORDEN, DANN Osten
-    */
+
+    //TODO:FALLS WESTEN, DANN NORDEN
+    if (eddy.heading == "WEST") {
+        eddy.heading = "NORTH";
+    }
+    //TODO:FALLS NORDEN, DANN Osten
+    if (eddy.heading == "NORTH") {
+        eddy.heading = "EAST";
+    }
 }
 
 /*
