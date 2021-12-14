@@ -91,8 +91,4 @@ ctx.shadowOffsetY = 5;
 ctx.shadowBlur    = 5;
 ctx.shadowColor   = 'rgba(204, 204, 204, 0)';
 ctx.fillRect(5,5,50,50);
-/*
-CANVAS ZEICHNEN IN HTML UND ÜBER CONTEXT IMPORTIEREN
-ROBOTER EINZEICHNEN
-IN DER CANVAS BEWEGUNGEN AUSFÜHREN
-*/
+
