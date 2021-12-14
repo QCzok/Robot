@@ -6,8 +6,8 @@ h1 {
     font-size: 48px;
 }
 .position {
-    width: 670px;
-    margin: 1rem auto;
+    width: 665px;
+    margin: 0.5rem auto;
     display: flex;
     padding: 0.5em;
     background-color: yellow;
