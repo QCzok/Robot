@@ -20,19 +20,36 @@ Funktionen des Roboters
 function step() {
     /*
     FALLS OSTEN, DANN X UM EINS ERHÖHEN
-    FALLS SÜDEN, DANN Y UM EINS ERHÖREN
-
-    FALLS WESTEN, DANN X UM EINS VERRINGERN
-    FALLS NORDEN, DANN Y UM EINS VERRINGERN
     */
+    if (eddy.heading == "EAST") {
+        eddy.posX = eddy.posX + 1;
+    }
+    /*
+     FALLS SÜDEN, DANN Y UM EINS ERHÖREN
+         */
+    if(eddy.heading == "SOUTH"){
+        eddy.posY = eddy.posY + 1;
+    }
+
+    /* 
+     TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
+     TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
+     */
 }
 
 function rotate() {
+    // FALLS OSTEN, DANN SÜDEN
+    if(eddy.heading == "EAST"){
+        eddy.heading = "SOUTH";
+    }
+
+    // FALLS SÜDEN, DANN WESTEN
+    if(eddy.heading == "SOUTH"){
+        eddy.heading = "WEST";
+    }
     /*
-        FALLS OSTEN, DANN SÜDEN
-        FALLS SÜDEN, DANN WESTEN
-        FALLS WESTEN, DANN NORDEN
-        FALLS NORDEn, DANN Osten
+        TODO:FALLS WESTEN, DANN NORDEN
+        TODO:FALLS NORDEN, DANN Osten
     */
 }
 
