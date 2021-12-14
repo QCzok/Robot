@@ -34,43 +34,63 @@ function step() {
     /*
         TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
     */
-    if(eddy.heading == "WEST"){
-        eddy.posY = eddy.posX - 1;
+    if (eddy.heading == "WEST") {
+        if (eddy.posX == 0) {
+            alert("Du bist an eine Grenze geßtosen");
+        } else {
+            eddy.posX = eddy.posX - 1;
+        }
+        
     }
 
     /* 
         TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
     */
-     if(eddy.heading == "NORTH"){
-        eddy.posY = eddy.posY - 1;
+    if (eddy.heading == "NORTH") {
+         if (eddy.posY == 0) {
+            alert("Du bist an eine Grenze geßtosen");
+        } else {
+            eddy.posY = eddy.posY - 1;
+        }
     }
+    update();
 }
 
 function rotate() {
     // FALLS OSTEN, DANN SÜDEN
-    if(eddy.heading == "EAST"){
+    if (eddy.heading == "EAST") {
         eddy.heading = "SOUTH";
+        update();
+        return;
     }
 
     // FALLS SÜDEN, DANN WESTEN
-    if(eddy.heading == "SOUTH"){
+    if (eddy.heading == "SOUTH") {
         eddy.heading = "WEST";
+        update();
+        return;
     }
 
     // FALLS WESTEN, DANN NORDEN
-    if(eddy.heading == "WEST"){
-        eddy.heading = "NORD";
+    if (eddy.heading == "WEST") {
+        eddy.heading = "NORTH";
+        update();
+        return;
     }
 
     // FALLS NORDEN, DANN Osten
-    if(eddy.heading == "NORD"){
+    if (eddy.heading == "NORTH") {
         eddy.heading = "EAST";
+        update();
+        return;
     }
+}
 
-    /*
-        TODO:FALLS WESTEN, DANN NORDEN
-        TODO:FALLS NORDEN, DANN Osten
-    */
+function update() {
+    document.getElementById("posX").innerHTML = eddy.posX;
+    document.getElementById("posY").innerHTML = eddy.posY;
+    document.getElementById("heading").innerHTML = eddy.heading;
+
 }
 
 /*
