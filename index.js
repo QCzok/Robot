@@ -21,47 +21,73 @@ function step() {
     /*
     FALLS OSTEN, DANN X UM EINS ERHÖHEN
     */
-    if (eddy.heading == "EAST") {
+    if (eddy.heading == 'EAST') {
         eddy.posX = eddy.posX + 1;
     }
     /*
      FALLS SÜDEN, DANN Y UM EINS ERHÖREN
          */
-    if(eddy.heading == "SOUTH"){
+    if (eddy.heading == "SOUTH") {
         eddy.posY = eddy.posY + 1;
     }
 
     // FALLS WESTEN, DANN X UM EINS VERRINGERN
-    if(eddy.heading == "WEST") {
-        eddy.posX = eddy.posX - 1;
+    if (eddy.heading == "WEST") {
+        // DARF KEINE MINUSWERTE ERREICHEN
+        if (eddy.posX == 0) {
+            alert("Du bist an eine Grenze gestoßen!")
+        } else {
+            eddy.posX = eddy.posX - 1;
+        }
     }
-    
+
     //FALLS NORDEN, DANN Y UM EINS VERRINGERN
-    if(eddy.heading == "NORTH") {
-        eddy.posY = eddy.posY - 1;
+    if (eddy.heading == "NORTH") {
+        // DARF KEINE MINUSWERTE ERREICHEN
+        if(eddy.posY == 0) {
+            alert("Du bist an eine Grenze gestoßen!")
+        } else {
+            eddy.posY = eddy.posY - 1;
+        }
     }
+    update();
 }
 
 function rotate() {
     // FALLS OSTEN, DANN SÜDEN
-    if(eddy.heading == "EAST"){
+    if (eddy.heading == "EAST") {
         eddy.heading = "SOUTH";
-    }
+        update();
+        return;
+    };
+
 
     // FALLS SÜDEN, DANN WESTEN
-    if(eddy.heading == "SOUTH"){
+    if (eddy.heading == "SOUTH") {
         eddy.heading = "WEST";
+        update();
+        return;
     }
 
     // FALLS WESTEN, DANN NORDEN
-    if(eddy.heading == "WEST"){
+    if (eddy.heading == "WEST") {
         eddy.heading = "NORTH";
+        update();
+        return;
     }
 
     // FALLS NORDEN, DANN OSTEN
-    if(eddy.heading == "NORTH"){
+    if (eddy.heading == "NORTH") {
         eddy.heading = "EAST";
+        update();
+        return;
     }
+}
+
+function update() {
+    document.getElementById("posX").innerHTML = eddy.posX;
+    document.getElementById("posY").innerHTML = eddy.posY;
+    document.getElementById("heading").innerHTML = eddy.heading;
 }
 
 /*
