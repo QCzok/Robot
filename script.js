@@ -1,7 +1,3 @@
-canvas.getContext("webgl");
-
-
-
 let eddy = {
     posX: 0,
     posY: 0,
@@ -12,13 +8,20 @@ let eddy = {
 function step() {
    
     if (eddy.heading == 'EAST') {
-        eddy.posX = eddy.posX + 1;
+        if (eddy.posX == 9) {
+            alert("Du bist an eine Grenze gestoßen!")
+        }
+        else {
+            eddy.posX = eddy.posX + 1;
+        }
     }
-  
     if (eddy.heading == "SOUTH") {
-        eddy.posY = eddy.posY + 1;
+        if(eddy.posY == 9) {
+            alert("Du bist an eine Grenze gestoßen!")
+        } else {
+            eddy.posY = eddy.posY + 1;
+        }
     }
-
   
     if (eddy.heading == "WEST") {
        
@@ -76,8 +79,18 @@ function update() {
     document.getElementById("posX").innerHTML = eddy.posX;
     document.getElementById("posY").innerHTML = eddy.posY;
     document.getElementById("heading").innerHTML = eddy.heading;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
 }
 
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = 'blue';
+ctx.shadowOffsetX = 5;
+ctx.shadowOffsetY = 5;
+ctx.shadowBlur    = 5;
+ctx.shadowColor   = 'rgba(204, 204, 204, 0)';
+ctx.fillRect(5,5,50,50);
 /*
 CANVAS ZEICHNEN IN HTML UND ÜBER CONTEXT IMPORTIEREN
 ROBOTER EINZEICHNEN
