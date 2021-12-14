@@ -31,6 +31,15 @@ function step() {
         eddy.posY = eddy.posY + 1;
     }
 
+    if(eddy.heading == "West"){
+        eddy.posx = eddy.posx - 1;
+    }
+
+    if(eddy.heading == "North"){
+        eddy.posy = eddy.posy - 1;
+    }
+
+
     /* 
      TODO: FALLS WESTEN, DANN X UM EINS VERRINGERN
      TODO: FALLS NORDEN, DANN Y UM EINS VERRINGERN
@@ -47,6 +56,15 @@ function rotate() {
     if(eddy.heading == "SOUTH"){
         eddy.heading = "WEST";
     }
+
+    if(eddy.heading == "WEST"){
+        eddy.heading = "North";
+    }
+
+    if(eddy.heading == "North"){
+        eddy.heading = "EAST";
+    }
+
     /*
         TODO:FALLS WESTEN, DANN NORDEN
         TODO:FALLS NORDEN, DANN Osten
