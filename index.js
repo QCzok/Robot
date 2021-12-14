@@ -32,11 +32,11 @@ function step() {
     }
 
     if(eddy.heading == "West"){
-        eddy.posx = eddy.posx - 1;
+        eddy.posX = eddy.posX - 1;
     }
 
     if(eddy.heading == "North"){
-        eddy.posy = eddy.posy - 1;
+        eddy.posY = eddy.posY - 1;
     }
 
 
