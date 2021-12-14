@@ -1,5 +1,59 @@
-#myCanvas {
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
+body {
+    
+    background-image: url(IMG-20210821-WA0135.jpg)
 }
+
+
+
+#myCanvas {
+    width: 450px;
+    height: 600px;
+    border: 5px solid	rgb(226, 152, 33);
+    
+    margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 30;
+}
+
+h1 {
+    color: rgb(209, 194, 63);
+}
+
+h1:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+
+span {
+    color: rgb(209, 194, 63);
+   text-decoration: underline;
+   font-style: italic;
+}
+
+span:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+
+#rotateButton {
+    background-color:rgb(209, 194, 63);
+}
+
+#moveButton {
+   background-color:rgb(209, 194, 63);
+}
+
+#rotateButton:hover {
+   background-color: #4CAF50; /* Green */
+  color: white;
+}
+#moveButton:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+

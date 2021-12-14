@@ -70,7 +70,7 @@ function rotate() {
     return;
   };
 
-  
+
   // FALLS SÜDEN, DANN WESTEN
   if (eddy.heading == "SOUTH") {
     eddy.heading = "WEST";
@@ -108,6 +108,7 @@ CANVAS IMPORTIEREN
 */
 let canvas = document.getElementById("myCanvas");
 let canvasContext = canvas.getContext("2d");
+canvasContext.fillStyle = "green";
 
 // RECHTECK ZEICHNEN
 canvasContext.fillRect(eddy.posX * 50, eddy.posY * 50, 50, 50);
