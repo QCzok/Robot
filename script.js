@@ -87,5 +87,5 @@ function update() {
 var img = document.getElementById('meinBild');
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-ctx.fillRect(5,5,50,50);
+ctx.drawImage(img, 0, 0, img.width / 4, img.height / 4 );
 
