@@ -1,3 +1,7 @@
+canvas.getContext("webgl");
+
+
+
 let eddy = {
     posX: 0,
     posY: 0,
